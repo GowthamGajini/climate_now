@@ -1,7 +1,7 @@
-require 'httparty'
+require "httparty"
 
 class GoogleGeocodeService
-  API_KEY = ENV.fetch('GOOGLE_API_KEY')
+  API_KEY = ENV.fetch("GOOGLE_API_KEY")
 
   def initialize(lat, lng)
     @lat = lat
@@ -28,6 +28,6 @@ class GoogleGeocodeService
       break if zipcode
     end
 
-    return zipcode
+    zipcode
   end
 end

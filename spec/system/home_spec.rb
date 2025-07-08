@@ -24,7 +24,7 @@ RSpec.describe "Address based Search bar", type: :system do
     fill_in "location", with: "asdfghjklzxcvbnm"
     find('#location').send_keys(:enter)
     expect(page).to have_content("Location not Found")
-  end  
+  end
 
   it "shows temperature if valid location is entered" do
     visit root_path
@@ -35,8 +35,8 @@ RSpec.describe "Address based Search bar", type: :system do
 
   it "shows description if present in weather data" do
     allow_any_instance_of(LocationToZipcodeService).to receive(:call).and_return("500001")
-    allow_any_instance_of(WeatherAtZipcodeLocation).to receive(:call).and_return({temperature: 30, description: "clear sky"})
-    
+    allow_any_instance_of(WeatherAtZipcodeLocation).to receive(:call).and_return({ temperature: 30, description: "clear sky" })
+
     visit root_path
     fill_in "location", with: "Hyderabad"
     find('#location').send_keys(:enter)
@@ -44,12 +44,12 @@ RSpec.describe "Address based Search bar", type: :system do
   end
 
   it "shows cache indicator when data is fetched from cache" do
-    Rails.cache.write("weather_at_zipcode:500001", {temperature: 28, description: "cloudy"})
-    allow_any_instance_of(LocationToZipcodeService).to receive(:call).and_return("500001")  
+    Rails.cache.write("weather_at_zipcode:500001", { temperature: 28, description: "cloudy" })
+    allow_any_instance_of(LocationToZipcodeService).to receive(:call).and_return("500001")
 
     visit root_path
     fill_in "location", with: "Hyderabad"
     find('#location').send_keys(:enter)
     expect(page).to have_content("from cache")
-  end  
+  end
 end

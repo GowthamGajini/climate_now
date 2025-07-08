@@ -15,7 +15,7 @@ RSpec.describe GoogleGeocodeService do
       "results" => [
         {
           "address_components" => [
-            { "long_name" => "500002", "types" => ["postal_code"] }
+            { "long_name" => "500002", "types" => [ "postal_code" ] }
           ]
         }
       ]

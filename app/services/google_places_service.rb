@@ -1,19 +1,19 @@
-require 'httparty'
+require "httparty"
 
 class GooglePlacesService
-  API_KEY = ENV.fetch('GOOGLE_API_KEY')
+  API_KEY = ENV.fetch("GOOGLE_API_KEY")
 
   def initialize(search_text)
     @search_text = search_text
   end
 
   def call
-    url = 'https://places.googleapis.com/v1/places:searchText'
+    url = "https://places.googleapis.com/v1/places:searchText"
 
     headers = {
-      'Content-Type' => 'application/json',
-      'X-Goog-Api-Key' => API_KEY,
-      'X-Goog-FieldMask' => '*'
+      "Content-Type" => "application/json",
+      "X-Goog-Api-Key" => API_KEY,
+      "X-Goog-FieldMask" => "*"
     }
 
     body = {

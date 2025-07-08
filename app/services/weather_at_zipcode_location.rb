@@ -1,7 +1,7 @@
-require 'httparty'
+require "httparty"
 
 class WeatherAtZipcodeLocation
-  API_KEY = ENV.fetch('OPENWEATHER_API_KEY')
+  API_KEY = ENV.fetch("OPENWEATHER_API_KEY")
 
   def initialize(zipcode)
     @zipcode = zipcode
