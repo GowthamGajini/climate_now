@@ -62,3 +62,7 @@ end
 # turbo for 
 gem 'turbo-rails'
 gem "importmap-rails"
+
+gem 'httparty'
+
+gem 'dotenv-rails', groups: [:development, :test]

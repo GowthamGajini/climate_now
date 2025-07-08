@@ -1,9 +1,21 @@
 <% if @error_message.present? %>
-  <div style="color: red; text-align: center; margin-top: 20px;">
+  <div style="color: #d32f2f; background: #ffeaea; padding: 8px 16px; border-radius: 6px; margin-top: 20px; display: inline-block;">
     <%= @error_message %>
   </div>
-<% elsif @temperature.present? %>
+<% elsif @weather_data&.dig(:temperature) %>
   <div style="margin-top: 20px; text-align: center;">
-    <h2>Temperature: <%= @temperature %> °C</h2>
+    <h2 style="color: #222; font-size: 2em; font-weight: bold; margin-bottom: 12px;">
+      Temperature: <span style="color: #1976d2;"><%= @weather_data[:temperature] %> °C</span>
+    </h2>
+    <% if @weather_data[:description] %>
+      <p style="color: #444; font-size: 1.1em; margin-bottom: 16px;">
+        Description: <span style="color: #388e3c;"><%= @weather_data[:description] %></span>
+      </p>
+    <% end %>
+    <% if @cache %>
+      <div style="color: #388e3c; background: #eafbe7; font-size: 1em; margin-top: 10px; border-radius: 5px; padding: 4px 12px; display: inline-block;">
+        (This weather data is from cache and was fetched recently.)
+      </div>
+    <% end %>
   </div>
 <% end %>
