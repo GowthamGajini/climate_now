@@ -44,6 +44,13 @@ While creating this app, We skipped some Rails parts which are not currently nee
 - Capybara is used for browser-based/system tests.
 Before running system tests, ensure Capybara is installed
 
+## Install Turbo and ImportMap to use turbo stream
+
+- bin/rails importmap:install
+- bin/rails turbo:install
+
+
 ## Note
 
 - Created a simple HomeController for the landing page.
+- Landing page contains search bar, which can be used for weather related information

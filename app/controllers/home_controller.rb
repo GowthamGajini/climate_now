@@ -3,7 +3,19 @@ class HomeController < ApplicationController
   end
 
   def search
+    @location = params[:location]
+    if @location.blank?
+      @error_message = "Please enter a location"
+      @temperature = nil
+      @from_cache = false
+    end
+
+    respond_to do |format|
+      format.turbo_stream
+      format.html { render partial: "search_result" }
+    end
   end
+
 
   def fetch_weather(zipcode)
   zipcode = '500084'

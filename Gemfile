@@ -58,3 +58,7 @@ group :test do
   gem 'capybara'
   gem 'webdrivers'
 end
+
+# turbo for 
+gem 'turbo-rails'
+gem "importmap-rails"

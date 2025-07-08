@@ -1,7 +1,11 @@
 <div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
   <div style="width: 100%; max-width: 400px;">
-    <%= form_with url: home_search_path, method: :get, local: true do %>
-      <%= text_field_tag :location, nil, placeholder: "Enter location or area", style: "width: 100%; padding: 8px; margin-bottom: 10px;" %>
+    <%= form_with url: home_search_path, method: :post, data: { turbo_frame: "search_result" } do %>
+      <%= text_field_tag :location, nil, id: "location", placeholder: "Enter location or area", style: "width: 100%; padding: 8px; margin-bottom: 10px;" %>
     <% end %>
+
+    <turbo-frame id="search_result">
+      <!-- search result will be rendered here -->
+    </turbo-frame>
   </div>
 </div>
