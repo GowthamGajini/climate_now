@@ -7,8 +7,10 @@ class HomeController < ApplicationController
     if @location.blank?
       @error_message = "Please enter a location"
       @temperature = nil
-      @from_cache = false
+    else
+      @temperature = 34
     end
+
 
     respond_to do |format|
       format.turbo_stream
