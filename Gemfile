@@ -47,22 +47,22 @@ group :development do
 end
 
 # redis for caching
-gem 'redis'
+gem "redis"
 
 # rspec for unit testing
-gem 'rspec-rails', group: [:development, :test]
+gem "rspec-rails", group: [ :development, :test ]
 
 # gems required only for test environment
 group :test do
   # browser simulator to verify web page features
-  gem 'capybara'
-  gem 'webdrivers'
+  gem "capybara"
+  gem "webdrivers"
 end
 
-# turbo for 
-gem 'turbo-rails'
+# turbo for
+gem "turbo-rails"
 gem "importmap-rails"
 
-gem 'httparty'
+gem "httparty"
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem "dotenv-rails", groups: [ :development, :test ]
