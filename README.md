@@ -40,6 +40,10 @@ While creating this app, We skipped some Rails parts which are not currently nee
 - Ran `rails generate rspec:install` to set up RSpec in this project.
 - Run `rspec` or `bundle exec rspec` to execute testcases
 
+## Browser based testing
+- Capybara is used for browser-based/system tests.
+Before running system tests, ensure Capybara is installed
+
 ## Note
 
 - Created a simple HomeController for the landing page.

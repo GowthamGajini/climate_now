@@ -51,3 +51,10 @@ gem 'redis'
 
 # rspec for unit testing
 gem 'rspec-rails', group: [:development, :test]
+
+# gems required only for test environment
+group :test do
+  # browser simulator to verify web page features
+  gem 'capybara'
+  gem 'webdrivers'
+end
