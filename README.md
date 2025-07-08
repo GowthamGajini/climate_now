@@ -34,3 +34,12 @@ Please make sure PostgreSQL is installed and running on your system before start
 While creating this app, We skipped some Rails parts which are not currently needed, might add based on necessity:
 - No Action Cable, Mailbox, Active Storage, System Test, or Javascript.
 
+## Testing
+
+- RSpec is used for writing and running tests.
+- Ran `rails generate rspec:install` to set up RSpec in this project.
+- Run `rspec` or `bundle exec rspec` to execute testcases
+
+## Note
+
+- Created a simple HomeController for the landing page.
