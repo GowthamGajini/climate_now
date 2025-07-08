@@ -10,5 +10,12 @@ RSpec.describe "Address based Search bar", type: :system do
     visit root_path
     find('#location').send_keys(:enter)
     expect(page).to have_content("Please enter a location")
-  end  
+  end
+
+  it "shows temperature if valid location is entered" do
+    visit root_path
+    fill_in "location", with: "Hyderabad"
+    find('#location').send_keys(:enter)
+    expect(page).to have_content("Temperature")
+  end
 end
