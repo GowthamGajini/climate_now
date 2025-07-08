@@ -34,6 +34,7 @@ RSpec.describe "Address based Search bar", type: :system do
   end
 
   it "shows description if present in weather data" do
+    Rails.cache.clear
     allow_any_instance_of(LocationToZipcodeService).to receive(:call).and_return("500001")
     allow_any_instance_of(WeatherAtZipcodeLocation).to receive(:call).and_return({ temperature: 30, description: "clear sky" })
 
