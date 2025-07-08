@@ -17,6 +17,8 @@ class WeatherForLocation
       WeatherAtZipcodeLocation.new(zipcode).call
     end
 
+    return { error: "Weather Data couldn't be fetched for this location" } if weather_data.blank?
+
     { weather: weather_data, from_cache: from_cache }
   end
 end

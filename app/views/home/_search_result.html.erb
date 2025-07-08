@@ -4,16 +4,42 @@
   </div>
 <% elsif @weather_data&.dig(:temperature) %>
   <div style="margin-top: 20px; text-align: center;">
-    <h2 style="color: #222; font-size: 2em; font-weight: bold; margin-bottom: 12px;">
-      Temperature: <span style="color: #1976d2;"><%= @weather_data[:temperature] %> °C</span>
+    <h2>
+      Temperature: <span class="weather-value-main"><%= @weather_data[:temperature] %> °C</span>
     </h2>
     <% if @weather_data[:description] %>
-      <p style="color: #444; font-size: 1.1em; margin-bottom: 16px;">
-        Description: <span style="color: #388e3c;"><%= @weather_data[:description] %></span>
+      <p>
+        Description: <text class="weather-description"> <%= @weather_data[:description] %> </text>
       </p>
     <% end %>
+
+    <div class="weather-panel">
+      <table class="weather-table">
+        <tr>
+          <th>Min Temp</th>
+          <th>Max Temp</th>
+          <th>Humidity</th>
+          <th>Pressure</th>
+          <th>Visibility</th>
+          <th>Wind Speed</th>
+          <th>Wind Dir</th>
+          <th>Clouds</th>
+        </tr>
+        <tr>
+          <td><%= @weather_data[:temp_min] %>°C</td>
+          <td><%= @weather_data[:temp_max] %>°C</td>
+          <td><%= @weather_data[:humidity] %>%</td>
+          <td><%= @weather_data[:pressure] %> hPa</td>
+          <td><%= @weather_data[:visibility] %> m</td>
+          <td><%= @weather_data[:wind_speed] %> m/s</td>
+          <td><%= @weather_data[:wind_deg] %>°</td>
+          <td><%= @weather_data[:clouds] %>%</td>
+        </tr>
+      </table>
+    </div>
+
     <% if @cache %>
-      <div style="color: #388e3c; background: #eafbe7; font-size: 1em; margin-top: 10px; border-radius: 5px; padding: 4px 12px; display: inline-block;">
+      <div class="weather-cache-note">
         (This weather data is from cache and was fetched recently.)
       </div>
     <% end %>
