@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "weather/search", to: "weather#search", as: :weather_search
+  get "home/search", to: "home#search", as: :home_search
   get "home/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
