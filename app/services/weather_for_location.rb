@@ -12,7 +12,7 @@ class WeatherForLocation
     cache_key = "weather_at_zipcode:#{zipcode}"
     from_cache = true
 
-    weather_data = Rails.cache.fetch(cache_key, expires_in: 1.minute) do
+    weather_data = Rails.cache.fetch(cache_key, expires_in: 30.minute) do
       from_cache = false
       WeatherAtZipcodeLocation.new(zipcode).call
     end
